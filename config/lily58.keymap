@@ -5,8 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 / {
     behaviors {
@@ -30,7 +30,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        base {
             // ------------------------------------------------------------------------------------------------------------
             // |  `    |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  DEL  |
             // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |  \    |
@@ -40,65 +40,64 @@
             // ------------------------------------------------------------------------------------------------------------
 
             bindings = <
-&kp GRAVE      &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                                &kp N6       &kp N7    &kp N8     &kp N9   &kp N0    &mt RALT DELETE
-&kp TAB        &kp Q   &kp W   &kp E     &kp R     &kp T                                 &kp Y        &kp U     &kp I      &kp O    &kp P     &kp BSLH
-&kp BACKSPACE  &kp A   &kp S   &kp D     &kp F     &kp G                                 &kp H        &kp J     &kp K      &kp L    &kp SEMI  &kp SQT
-&WinShiftDance &kp Z   &kp X   &kp C     &kp V     &kp B     &kp LBKT     &none         &kp N        &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-                               &kp LGUI  &kp ESC  &lt 2 ENTER  &kp LCTRL    &lt 3 SPACE  &mo 1   &LayerModTap 1 1  &kp ESCAPE
+&kp GRAVE      &kp N1  &kp N2  &kp N3    &kp N4   &kp N5                                    &kp N6            &kp N7     &kp N8            &kp N9   &kp N0    &mt RALT DELETE
+&kp TAB        &kp Q   &kp W   &kp E     &kp R    &kp T                                     &kp Y             &kp U      &kp I             &kp O    &kp P     &kp BSLH
+&kp BACKSPACE  &kp A   &kp S   &kp D     &kp F    &kp G                                     &kp H             &kp J      &kp K             &kp L    &kp SEMI  &kp SQT
+&kp LSHIFT     &kp Z   &kp X   &kp C     &kp V    &kp B        &kp DELETE    &kp BACKSPACE  &kp N             &kp M      &kp COMMA         &kp DOT  &kp FSLH  &kp RSHFT
+                               &kp LGUI  &kp ESC  &lt 2 ENTER  &kp LCTRL     &lt 3 SPACE    &LayerModTap 1 1  &kp ENTER  &LayerModTap 4 4
             >;
+
+            label = "base";
         };
 
         f_numbers {
             bindings = <
-&trans  &kp F1   &kp F2  &kp F3  &kp F4  &kp F5                              &kp F6         &kp F7          &kp F8          &kp F9    &kp F10    &kp F11
-&trans  &kp F10  &kp F7  &kp F8  &kp F9  &none                               &kp KP_PLUS    &kp KP_N7       &kp KP_N8       &kp KP_N9 &kp KP_MULTIPLY   &kp F12
-&trans  &kp F11  &kp F4  &kp F5  &kp F6  &none                               &kp KP_MINUS   &kp KP_N4       &kp KP_N5       &kp KP_N6 &kp KP_DIVIDE     &kp KP_EQUAL
-&trans  &kp F12  &kp F1  &kp F2  &kp F3  &none    &trans        &trans       &kp KP_N0      &kp KP_N1       &kp KP_N2       &kp KP_N3 &kp COMMA         &trans
-                         &trans  &trans  &trans    &trans        &trans       &trans         &trans          &mo 1
+&trans  &kp F1   &kp F2  &kp F3  &kp F4  &kp F5                      &kp F6     &kp F7  &kp F8  &kp F9  &kp F10    &kp F11
+&trans  &kp F10  &kp F7  &kp F8  &kp F9  &none                       &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR   &kp F12
+&trans  &kp F11  &kp F4  &kp F5  &kp F6  &none                       &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH   &kp EQUAL
+&trans  &kp F12  &kp F1  &kp F2  &kp F3  &none   &trans    &kp BSPC  &kp N0     &kp N1  &kp N2  &kp N3  &kp COMMA  &trans
+                         &trans  &trans  &trans  &trans    &trans    &trans     &trans  &mo 1
             >;
+
             label = "f-num";
         };
 
         symbols {
             bindings = <
-&trans  &kp EXCL  &kp AT    &kp HASH   &kp DLLR   &kp PRCNT                           &kp CARET  &kp AMPS   &kp STAR        &kp LPAR  &kp RPAR  &kp BSLH
-&trans  &kp GRAVE &kp LBRC  &kp LBKT   &kp LPAR   &kp EQUAL                           &kp MINUS  &trans     &trans          &trans    &kp DQT   &trans
-&trans  &kp TILDE &kp RBRC  &kp RBKT   &kp RPAR   &kp PLUS                            &kp UNDER  &trans     &trans          &trans    &trans    &trans
-&trans  &trans    &trans    &trans     &trans     &trans    &trans        &trans      &trans     &trans     &trans          &trans    &trans    &trans
-                            &trans     &trans     &trans    &trans        &trans      &trans     &trans     &trans
+&trans  &kp EXCL   &kp AT  &kp HASH          &kp DLLR           &kp PRCNT                    &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &kp DEL
+&trans  &none      &none   &kp LPAR          &kp RPAR           &none                        &none      &trans    &trans    &trans    &none     &trans
+&trans  &kp GRAVE  &none   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp EQUAL                    &kp MINUS  &trans    &trans    &trans    &trans    &trans
+&trans  &kp TILDE  &trans  &kp LEFT_BRACE    &kp RBRC           &kp PLUS   &trans    &trans  &kp UNDER  &trans    &trans    &trans    &trans    &trans
+                           &trans            &trans             &trans     &trans    &trans  &trans     &trans    &trans
             >;
+
             label = "sym";
         };
 
         navigation {
             bindings = <
-&trans  &trans  &trans     &trans             &trans              &trans                               &kp PSCRN        &kp C_PP    &kp C_PREV      &kp C_NEXT  &trans     &trans
-&trans  &trans  &trans     &trans             &trans              &trans                               &trans           &trans      &trans          &trans      &trans     &trans
-&trans  &trans  &kp HOME   &kp PG_UP          &kp PG_DN           &kp END                              &kp LEFT         &kp DOWN    &kp UP          &kp RIGHT   &trans     &trans
-&trans  &trans  &trans     &kp LG(LC(LEFT))   &kp LC(LG(RIGHT))   &trans    &trans        &trans      &trans           &kp C_VOL_DN &kp C_VOL_UP    &kp C_MUTE  &trans     &trans
-                          &trans             &trans              &trans    &trans        &trans      &trans           &trans      &trans
+&trans  &trans  &trans    &trans            &trans             &trans                     &kp PSCRN  &none     &none   &none      &trans  &trans
+&trans  &trans  &trans    &trans            &trans             &trans                     &trans     &trans    &trans  &trans     &trans  &trans
+&trans  &trans  &kp HOME  &kp PG_UP         &kp PG_DN          &kp END                    &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &trans  &trans    &kp LG(LC(LEFT))  &kp LC(LG(RIGHT))  &trans   &trans    &trans  &trans     &none     &none   &none      &trans  &trans
+                          &trans            &trans             &trans   &trans    &trans  &trans     &trans    &trans
             >;
+
             label = "nav";
         };
 
         board {
             bindings = <
-&none  &none  &none  &none  &none  &none                      &none  &none  &none  &none  &none  &bt BT_CLR
-&none  &none  &none  &none  &none  &none                      &none  &none  &none  &none  &none  &bt BT_PRV
-&none  &none  &none  &none  &none  &none                      &none  &none  &none  &none  &none  &bt BT_NXT
-&none  &none  &none  &none  &none  &none    &none    &none    &none  &none  &none  &none  &none  &trans
-                     &none  &none  &none    &none    &none    &none  &none  &mo 1
+&none  &none  &none  &none  &none  &none                  &none  &none  &none   &bt BT_PRV    &bt BT_NXT    &bt BT_CLR
+&none  &none  &none  &none  &none  &none                  &none  &none  &none   &none         &none         &none
+&none  &none  &none  &none  &none  &none                  &none  &none  &none   &kp C_PREV    &kp C_NEXT    &kp C_PP
+&none  &none  &none  &none  &none  &none  &none    &none  &none  &none  &none   &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE
+                     &none  &none  &none  &none    &none  &none  &none  &trans
             >;
+
             label = "keeb";
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        keeb {
-            if-layers = <2 1>;
-            then-layer = <4>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
