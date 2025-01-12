@@ -32,19 +32,19 @@
 
         base {
             // ------------------------------------------------------------------------------------------------------------
-            // |  `    |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  DEL  |
+            // |  `    |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |  BSPC |
             // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |  \    |
             // | BKSP  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
             // | SHFT  |  Z  |  X  |  C   |  V   |  B   |  [    |  |   ]   |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //                     | GUI  | ESC  | ENT  | CTRL  |  | SPACE | LWR  | RAISE |  ESC  |
+            //                     | DEL  | ESC  | ENT  | CTRL  |  | SPACE | LWR  | RAISE |  ESC  |
             // ------------------------------------------------------------------------------------------------------------
 
             bindings = <
-&kp GRAVE      &kp N1  &kp N2  &kp N3    &kp N4   &kp N5                                   &kp N6            &kp N7     &kp N8            &kp N9   &kp N0    &mt RALT DELETE
+&kp GRAVE      &kp N1  &kp N2  &kp N3    &kp N4   &kp N5                                   &kp N6            &kp N7     &kp N8            &kp N9   &kp N0    &mt RALT BACKSPACE
 &kp TAB        &kp Q   &kp W   &kp E     &kp R    &kp T                                    &kp Y             &kp U      &kp I             &kp O    &kp P     &kp BSLH
 &kp BACKSPACE  &kp A   &kp S   &kp D     &kp F    &kp G                                    &kp H             &kp J      &kp K             &kp L    &kp SEMI  &kp SQT
-&kp LSHIFT     &kp Z   &kp X   &kp C     &kp V    &kp B        &kp DELETE   &kp BACKSPACE  &kp N             &kp M      &kp COMMA         &kp DOT  &kp FSLH  &kp RSHFT
-                               &kp LGUI  &kp ESC  &lt 2 ENTER  &kp LCTRL    &lt 3 SPACE    &LayerModTap 1 1  &kp ENTER  &LayerModTap 4 4
+&kp LSHIFT     &kp Z   &kp X   &kp C     &kp V    &kp B        &kp BACKSPACE  &kp BACKSPACE  &kp N          &kp M      &kp COMMA         &kp DOT  &kp FSLH  &kp RSHFT
+                               &kp DELETE &kp ESC  &lt 2 ENTER  &kp LCTRL    &lt 3 SPACE    &LayerModTap 1 1  &kp ENTER  &LayerModTap 4 4
             >;
 
             label = "base";
