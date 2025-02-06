@@ -69,7 +69,7 @@
 
         f_numbers {
             bindings = <
-&trans  &kp F1   &kp F2  &kp F3  &kp F4  &kp F5                      &kp F6     &kp F7  &kp F8  &kp F9  &kp F10    &kp F11
+&trans  &trans  &trans  &trans  &trans  &trans                      &kp F6     &kp F7  &kp F8  &kp F9  &kp F10    &kp F11
 &trans  &kp F10  &kp F7  &kp F8  &kp F9  &none                       &kp PLUS   &kp N7  &kp N8  &kp N9  &kp STAR   &kp F12
 &trans  &kp F11  &kp F4  &kp F5  &kp F6  &none                       &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH   &kp EQUAL
 &trans  &kp F12  &kp F1  &kp F2  &kp F3  &none   &trans    &kp BSPC  &kp N0     &kp N1  &kp N2  &kp N3  &kp COMMA  &trans
