@@ -27,6 +27,19 @@
         };
     };
 
+    macros {
+        em_dash: em_dash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp RIGHT_ALT &kp KP_N0 &kp KP_NUMBER_1 &kp KP_NUMBER_5 &kp KP_NUMBER_1>,
+                <&macro_release>;
+
+            label = "EM_DASH";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -40,11 +53,11 @@
             // ------------------------------------------------------------------------------------------------------------
 
             bindings = <
-&kp GRAVE      &kp N1  &kp N2  &kp N3    &kp N4   &kp N5                                   &kp N6            &kp N7     &kp N8            &kp N9   &kp N0    &mt RALT BACKSPACE
-&kp TAB        &kp Q   &kp W   &kp E     &kp R    &kp T                                    &kp Y             &kp U      &kp I             &kp O    &kp P     &kp BSLH
-&kp BACKSPACE  &kp A   &kp S   &kp D     &kp F    &kp G                                    &kp H             &kp J      &kp K             &kp L    &kp SEMI  &kp SQT
-&kp LSHIFT     &kp Z   &kp X   &kp C     &kp V    &kp B        &kp BACKSPACE  &kp BACKSPACE  &kp N          &kp M      &kp COMMA         &kp DOT  &kp FSLH  &kp RSHFT
-                               &kp DELETE &kp ESC  &lt 2 ENTER  &kp LCTRL    &lt 3 SPACE    &LayerModTap 1 1  &kp ENTER  &LayerModTap 4 4
+&kp GRAVE      &kp N1  &kp N2  &kp N3      &kp N4   &kp N5                                   &kp N6            &kp N7         &kp N8       &kp N9   &kp N0    &kp DEL
+&kp TAB        &kp Q   &kp W   &kp E       &kp R    &kp T                                    &kp Y             &kp U          &kp I        &kp O    &kp P     &kp BSLH
+&kp BACKSPACE  &kp A   &kp S   &kp D       &kp F    &kp G                                    &kp H             &kp J          &kp K        &kp L    &kp SEMI  &kp SQT
+&kp LSHIFT     &kp Z   &kp X   &kp C       &kp V    &kp B        &kp DEL      &kp BACKSPACE  &kp N             &kp M          &kp COMMA    &kp DOT  &kp FSLH  &kp RSHFT
+                               &kp DELETE  &kp ESC  &lt 2 ENTER  &kp LCTRL    &lt 3 SPACE    &LayerModTap 1 1  &kp RIGHT_ALT  &lt 4 ENTER
             >;
 
             label = "base";
@@ -64,11 +77,11 @@
 
         symbols {
             bindings = <
-&trans  &kp EXCL   &kp AT  &kp HASH          &kp DLLR           &kp PRCNT                    &kp CARET  &kp AMPS  &kp STAR  &kp LPAR  &kp RPAR  &trans
-&trans  &none      &none   &kp LPAR          &kp RPAR           &none                        &none      &trans    &trans    &trans    &none     &trans
-&trans  &kp GRAVE  &none   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp EQUAL                    &kp MINUS  &trans    &trans    &trans    &trans    &trans
-&trans  &kp TILDE  &trans  &kp LEFT_BRACE    &kp RBRC           &kp PLUS   &trans    &trans  &kp UNDER  &trans    &trans    &trans    &trans    &trans
-                           &trans            &trans             &trans     &trans    &trans  &trans     &trans    &trans
+&trans  &kp EXCL         &kp AT           &kp HASH           &kp DLLR               &kp PRCNT                        &kp CARET  &kp AMPS       &kp STAR      &kp LPAR              &kp RPAR               &trans
+&trans  &kp EXCLAMATION  &kp AT_SIGN      &kp POUND          &kp DOLLAR             &kp PERCENT                      &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE
+&trans  &kp GRAVE        &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LEFT_PARENTHESIS   &kp EQUAL                        &kp MINUS  &trans         &trans        &trans                &trans                 &trans
+&trans  &kp TILDE        &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp RIGHT_PARENTHESIS  &kp PLUS     &trans    &em_dash  &kp UNDER  &trans         &trans        &trans                &trans                 &trans
+                                          &trans             &trans                 &trans       &trans    &trans    &trans     &trans         &trans
             >;
 
             label = "sym";
