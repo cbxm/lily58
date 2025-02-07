@@ -79,7 +79,7 @@
 &kp TAB        &kp Q         &kp W       &kp E       &kp R        &kp T                                              &kp Y      &kp U          &kp I        &kp O       &kp P            &kp BSLH
 &kp BACKSPACE  &hm LSHIFT A  &hm LGUI S  &hm LALT D  &hm LCTRL F  &kp G                                              &kp H      &hm RCTRL J    &hm RALT K   &hm RGUI L  &hm RSHIFT SEMI  &kp SQT
 &kp LSHIFT     &kp Z         &kp X       &kp C       &kp V        &kp B        &kp ESC                &kp BACKSPACE  &kp N      &kp M          &kp COMMA    &kp DOT     &kp FSLH         &kp RSHFT
-                                         &kp LWIN    &tog 1       &lt 3 ENTER  &mt LCTRL BACKSPACE    &lt 4 SPACE    &lt 2 TAB  &kp RIGHT_ALT  &lt 4 ENTER
+                                         &kp LWIN    &tog 1       &lt 3 ENTER  &mt LCTRL BACKSPACE    &lt 4 SPACE    &lt 2 TAB  &kp RIGHT_ALT  &lt 5 ENTER
             >;
 
             label = "base";
