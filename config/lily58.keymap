@@ -75,11 +75,11 @@
 
         base {
             bindings = <
-&kp GRAVE      &kp N1  &kp N2  &kp N3    &kp N4   &kp N5                                   &kp N6            &kp N7         &kp N8       &kp N9   &kp N0    &kp DEL
-&kp TAB        &kp Q   &kp W   &kp E     &kp R    &kp T                                    &kp Y             &kp U          &kp I        &kp O    &kp P     &kp BSLH
-&kp BACKSPACE  &hm LSHIFT A  &hm LGUI S  &hm LALT D  &hm LCTRL F  &kp G                    &kp H             &hm RCTRL J    &hm RALT K   &hm RGUI L  &hm RSHIFT SEMI  &kp SQT
-&kp LSHIFT     &kp Z   &kp X   &kp C     &kp V    &kp B        &kp DEL      &kp BACKSPACE  &kp N             &kp M          &kp COMMA    &kp DOT  &kp FSLH  &kp RSHFT
-                               &kp LWIN  &kp ESC  &lt 2 ENTER  &kp LCTRL    &lt 3 SPACE    &LayerModTap 1 1  &kp RIGHT_ALT  &lt 4 ENTER
+&kp GRAVE      &kp N1        &kp N2      &kp N3      &kp N4       &kp N5                                             &kp N6     &kp N7         &kp N8       &kp N9      &kp N0           &kp DEL
+&kp TAB        &kp Q         &kp W       &kp E       &kp R        &kp T                                              &kp Y      &kp U          &kp I        &kp O       &kp P            &kp BSLH
+&kp BACKSPACE  &hm LSHIFT A  &hm LGUI S  &hm LALT D  &hm LCTRL F  &kp G                                              &kp H      &hm RCTRL J    &hm RALT K   &hm RGUI L  &hm RSHIFT SEMI  &kp SQT
+&kp LSHIFT     &kp Z         &kp X       &kp C       &kp V        &kp B        &kp ESC                &kp BACKSPACE  &kp N      &kp M          &kp COMMA    &kp DOT     &kp FSLH         &kp RSHFT
+                                         &kp LWIN    &tog 1       &lt 3 ENTER  &mt LCTRL BACKSPACE    &lt 4 SPACE    &lt 2 TAB  &kp RIGHT_ALT  &lt 4 ENTER
             >;
 
             label = "base";
@@ -87,11 +87,11 @@
 
         clean {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&none   &trans  &trans  &trans  &trans  &trans  &trans   &trans   &trans  &trans  &trans  &trans  &trans  &none
-                        &none   &trans  &trans  &none    &trans   &trans  &none   &trans
+&trans  &trans  &trans  &trans  &trans  &trans                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                           &trans  &trans  &trans  &trans  &trans  &trans
+&none   &trans  &trans  &trans  &trans  &trans  &trans           &trans  &trans  &trans  &trans  &trans  &trans  &none
+                        &none   &trans  &trans  &kp BACKSPACE    &trans  &trans  &none   &trans
             >;
 
             label = "clean";
@@ -103,7 +103,7 @@
 &trans  &kp F10  &kp F7  &kp F8  &kp F9  &none                       &kp KP_PLUS   &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MULTIPLY  &trans
 &trans  &kp F11  &kp F4  &kp F5  &kp F6  &none                       &kp KP_MINUS  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DIVIDE    &kp KP_EQUAL
 &trans  &kp F12  &kp F1  &kp F2  &kp F3  &none   &trans    &kp BSPC  &kp KP_N0     &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_DOT       &trans
-                         &trans  &trans  &trans  &trans    &trans    &trans        &trans     &mo 1
+                         &trans  &trans  &trans  &trans    &trans    &trans        &trans     &trans
             >;
 
             label = "f-num";
