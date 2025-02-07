@@ -87,11 +87,11 @@
 
         clean {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&none   &trans  &trans  &trans  &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans
-&none   &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans  &trans  &trans  &trans  &none
-                        &none   &trans  &trans  &kp ENTER    &trans  &trans  &none   &trans
+&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans   &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                       &trans  &trans   &trans  &trans  &trans  &trans
+&none   &trans  &trans  &trans  &trans  &trans                       &trans  &trans   &trans  &trans  &trans  &trans
+&none   &trans  &trans  &trans  &trans  &trans  &trans       &trans  &trans  &trans   &trans  &trans  &trans  &none
+                        &none   &trans  &trans  &kp ENTER    &trans  &trans  &kp DEL  &trans
             >;
 
             label = "clean";
