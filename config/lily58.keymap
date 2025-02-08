@@ -111,11 +111,11 @@
 
         left_symbols {
             bindings = <
-&trans  &trans           &trans          &trans            &trans                &trans                                        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp CARET        &kp AMPERSAND   &kp ASTERISK      &kp PERCENT           &kp EQUAL                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp EXCLAMATION  &kp AT_SIGN     &kp HASH          &kp DOLLAR            &dash_dance 0 MINUS                           &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp GRAVE        &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp SQT              &kp BACKSLASH    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                         &trans            &trans                &trans               &trans           &trans  &trans  &trans  &trans
+&trans  &trans                  &trans            &trans            &trans                &trans                                        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp CARET               &kp AMPERSAND     &kp ASTERISK      &kp PERCENT           &kp EQUAL                                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &hm LSHIFT EXCLAMATION  &hm LWIN AT_SIGN  &hm LALT HASH     &hm LCTRL DOLLAR      &dash_dance 0 MINUS                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp GRAVE               &kp LEFT_BRACE    &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp SQT              &kp BACKSLASH    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                  &trans            &trans                &trans               &trans           &trans  &trans  &trans  &trans
             >;
 
             label = "sym";
@@ -123,11 +123,11 @@
 
         navigation {
             bindings = <
-&trans  &trans  &trans    &trans            &trans             &trans                     &kp PSCRN  &none     &none   &none      &trans  &trans
-&trans  &trans  &trans    &trans            &trans             &trans                     &trans     &trans    &trans  &trans     &trans  &trans
-&trans  &trans  &kp HOME  &kp PG_UP         &kp PG_DN          &kp END                    &kp LEFT   &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans    &kp LG(LC(LEFT))  &kp LC(LG(RIGHT))  &trans   &trans    &trans  &trans     &none     &none   &none      &trans  &trans
-                          &trans            &trans             &trans   &trans    &trans  &trans     &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp PSCRN         &none      &none      &none              &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp LG(LC(LEFT))  &trans     &trans     &kp LG(LC(RIGHT))  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT          &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME          &kp PG_DN  &kp PG_UP  &kp END            &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans            &trans     &trans
             >;
 
             label = "nav";
