@@ -44,6 +44,17 @@
             quick-tap-ms = <0>;
             bindings = <&em_dash>, <&kp>;
         };
+
+        dance: dance {
+            compatible = "zmk,behavior-hold-tap";
+            label = "DANCE";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+        };
     };
 
     macros {
@@ -111,11 +122,11 @@
 
         left_symbols {
             bindings = <
-&trans  &trans                  &trans            &trans            &trans                &trans                                        &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp CARET               &kp AMPERSAND     &kp ASTERISK      &kp PERCENT           &kp EQUAL                                     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &hm LSHIFT EXCLAMATION  &hm LWIN AT_SIGN  &hm LALT HASH     &hm LCTRL DOLLAR      &dash_dance 0 MINUS                           &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp GRAVE               &kp LEFT_BRACE    &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp SQT              &kp BACKSLASH    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                  &trans            &trans                &trans               &trans           &trans  &trans  &trans  &trans
+&trans  &trans                  &trans                         &trans                             &trans                                     &trans                                        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp CARET               &kp AMPERSAND                  &kp ASTERISK                       &kp PERCENT                                &kp EQUAL                                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &hm LSHIFT EXCLAMATION  &hm LWIN AT_SIGN               &hm LALT HASH                      &hm LCTRL DOLLAR                           &dash_dance 0 MINUS                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp GRAVE               &dance RIGHT_BRACE LEFT_BRACE  &dance RIGHT_BRACKET LEFT_BRACKET  &dance RIGHT_PARENTHESIS LEFT_PARENTHESIS  &kp SQT              &kp BACKSLASH    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                                               &trans                             &trans                                     &trans               &trans           &trans  &trans  &trans  &trans
             >;
 
             label = "sym";
