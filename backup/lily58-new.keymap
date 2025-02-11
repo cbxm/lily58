@@ -1,0 +1,328 @@
+keymap {
+    compatible = "zmk,keymap";
+
+    base {
+        bindings = <
+            // ... (existing base layer)
+        >;
+        label = "base";
+    };
+
+    f_numbers {
+        bindings = <
+            // ... (existing f-numbers layer)
+        >;
+        label = "f-num";
+    };
+
+    left_symbols {
+        bindings = <
+            // ... (existing left_symbols layer)
+        >;
+        label = "sym";
+    };
+
+    navigation {
+        bindings = <
+            // ... (existing navigation layer)
+        >;
+        label = "nav";
+    };
+
+    board {
+        bindings = <
+            // ... (existing board layer)
+        >;
+        label = "keeb";
+    };
+
+    r-fnum {
+        bindings = <
+            // ... (existing r-fnum layer)
+        >;
+    };
+
+    /* --- NEW MIRRORED LAYERS BELOW --- */
+
+    /* Navigation layers */
+    nav_left {
+        bindings = <
+            // Row 1 (12 keys): fill left half (columns 0–5) with nav keys; right half transparent
+            &kp HOME, &kp PG_UP, &kp PSCRN, &kp INS, &kp DEL, &kp NO,
+            &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 2 (12 keys)
+            &kp LEFT, &kp DOWN, &kp UP, &kp RIGHT, &kp NO, &kp NO,
+            &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 3 (12 keys): no nav functions; all transparent
+            &trans, &trans, &trans, &trans, &trans, &trans,
+            &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 4 (14 keys): left half (7 keys) with nav functions; right half transparent
+            &kp HOME, &kp PG_UP, &kp PG_DN, &kp END, &kp LEFT, &kp RIGHT, &kp INS,
+            &trans, &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 5 (9 keys): assign left thumb cluster keys (first 4 keys) then transparent
+            &kp APP, &kp NO, &kp NO, &kp NO,
+            &trans, &trans, &trans, &trans, &trans
+        >;
+        label = "navL";
+    };
+
+    nav_right {
+        bindings = <
+            // Row 1 (12 keys): left half transparent; right half gets the mirror of nav_left row1
+            &trans, &trans, &trans, &trans, &trans, &trans,
+            &kp NO, &kp DEL, &kp INS, &kp PSCRN, &kp PG_UP, &kp HOME
+
+            // Row 2 (12 keys)
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+            &kp NO, &kp NO, &kp RIGHT, &kp UP, &kp DOWN, &kp LEFT
+
+            // Row 3 (12 keys): all transparent
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+            &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 4 (14 keys): left half transparent; right half mirror of nav_left row4 (reversed)
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans,
+            &kp INS, &kp RIGHT, &kp LEFT, &kp END, &kp PG_DN, &kp PG_UP, &kp HOME
+
+            // Row 5 (9 keys): left half transparent; right half gets mirrored thumb keys
+            , &trans, &trans, &trans, &trans,
+            &kp NO, &kp NO, &kp NO, &kp NO, &kp APP
+        >;
+        label = "navR";
+    };
+
+    /* F-key layers */
+    fkeys_left {
+        bindings = <
+            // Row 1 (12 keys): left half: F1–F6; right half transparent
+            &kp F1, &kp F2, &kp F3, &kp F4, &kp F5, &kp F6,
+            &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Rows 2–5 all transparent
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+        >;
+        label = "fkeysL";
+    };
+
+    fkeys_right {
+        bindings = <
+            // Row 1 (12 keys): left half transparent; right half: mirror F1–F6 (reversed order)
+            &trans, &trans, &trans, &trans, &trans, &trans,
+            &kp F6, &kp F5, &kp F4, &kp F3, &kp F2, &kp F1
+
+            // Rows 2–5 all transparent
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+        >;
+        label = "fkeysR";
+    };
+
+    /* Ten-key (numpad) layers */
+    tenkey_left {
+        bindings = <
+            // Row 1 (12 keys): left half gets numpad top row; right half transparent
+            &kp KP_7, &kp KP_8, &kp KP_9, &kp NO, &kp NO, &kp NO,
+            &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 2 (12 keys)
+            , &kp KP_4, &kp KP_5, &kp KP_6, &kp NO, &kp NO, &kp NO,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 3 (12 keys)
+            , &kp KP_1, &kp KP_2, &kp KP_3, &kp NO, &kp NO, &kp NO,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 4 (14 keys): left half gets KP_0 and KP_DOT; remainder in left half filled with NO
+            , &kp KP_0, &kp KP_DOT, &kp NO, &kp NO, &kp NO, &kp NO, &kp NO,
+              &trans, &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 5 (9 keys): all transparent
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+        >;
+        label = "tenkeyL";
+    };
+
+    tenkey_right {
+        bindings = <
+            // Row 1 (12 keys): left half transparent; right half gets mirror of row1 left half
+            &trans, &trans, &trans, &trans, &trans, &trans,
+            &kp NO, &kp NO, &kp NO, &kp KP_9, &kp KP_8, &kp KP_7
+
+            // Row 2 (12 keys)
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+            &kp NO, &kp NO, &kp NO, &kp KP_6, &kp KP_5, &kp KP_4
+
+            // Row 3 (12 keys)
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+            &kp NO, &kp NO, &kp NO, &kp KP_3, &kp KP_2, &kp KP_1
+
+            // Row 4 (14 keys): left half transparent; right half mirror of left row4
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans,
+            &kp NO, &kp NO, &kp NO, &kp NO, &kp NO, &kp KP_DOT, &kp KP_0
+
+            // Row 5 (9 keys)
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+        >;
+        label = "tenkeyR";
+    };
+
+    /* Symbol layers */
+    sym_left {
+        bindings = <
+            // Row 1 (12 keys): fully transparent
+            &trans, &trans, &trans, &trans, &trans, &trans,
+            &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 2 (12 keys): left half holds symbols
+            , &trans, &kp CARET, &kp AMPERSAND, &kp ASTERISK, &kp PERCENT, &kp EQUAL,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 3 (12 keys)
+            , &trans, &hm LSHIFT EXCLAMATION, &hm LWIN AT_SIGN, &hm LALT HASH, &hm LCTRL DOLLAR, &dash_dance 0 MINUS,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 4 (14 keys): left half with more symbols
+            , &trans, &kp GRAVE, &dance RIGHT_BRACE LEFT_BRACE, &dance RIGHT_BRACKET LEFT_BRACKET, &dance RIGHT_PARENTHESIS LEFT_PARENTHESIS, &kp SQT, &kp BACKSLASH,
+              &trans, &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 5 (8 keys)
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+        >;
+        label = "symL";
+    };
+
+    sym_right {
+        bindings = <
+            // Row 1 (12 keys)
+            &trans, &trans, &trans, &trans, &trans, &trans,
+            &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 2 (12 keys): left half transparent; right half mirror of sym_left row2
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+            &kp EQUAL, &kp PERCENT, &kp ASTERISK, &kp AMPERSAND, &kp CARET, &trans
+
+            // Row 3 (12 keys)
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+            &dash_dance 0 MINUS, &hm LCTRL DOLLAR, &hm LALT HASH, &hm LWIN AT_SIGN, &hm LSHIFT EXCLAMATION, &trans
+
+            // Row 4 (14 keys): mirror of sym_left row4 left half
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans,
+            &kp BACKSLASH, &kp SQT, &dance RIGHT_PARENTHESIS LEFT_PARENTHESIS, &dance RIGHT_BRACKET LEFT_BRACKET, &dance RIGHT_BRACE LEFT_BRACE, &kp GRAVE, &trans
+
+            // Row 5 (8 keys)
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+        >;
+        label = "symR";
+    };
+
+    /* Media (volume & playback) layers */
+    media_left {
+        bindings = <
+            // Rows 1–2 fully transparent
+            &trans, &trans, &trans, &trans, &trans, &trans,
+            &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 3 (12 keys): left half holds media playback keys
+            , &kp C_PREV, &kp C_NEXT, &kp C_PP, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 4 (14 keys): left half holds volume controls
+            , &kp C_VOL_DN, &kp C_VOL_UP, &kp C_MUTE, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 5 completely transparent
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+        >;
+        label = "mediaL";
+    };
+
+    media_right {
+        bindings = <
+            // Rows 1–2 fully transparent
+            &trans, &trans, &trans, &trans, &trans, &trans,
+            &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Row 3 (12 keys): left half transparent; right half gets media playback (placed in positions 6–8)
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+              &kp C_PP, &kp C_NEXT, &kp C_PREV, &trans, &trans, &trans
+
+            // Row 4 (14 keys): left half transparent; right half gets volume controls (mirror order)
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &kp C_MUTE, &kp C_VOL_UP, &kp C_VOL_DN
+
+            // Row 5 fully transparent
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+        >;
+        label = "mediaR";
+    };
+
+    /* Bluetooth control layers */
+    bt_left {
+        bindings = <
+            // Row 1 (12 keys): left half holds BT keys from board row1
+            &kp CAPS, &bt BT_DISC 0, &bt BT_DISC 1, &bt BT_DISC 2, &bt BT_DISC 3, &bt BT_DISC 4,
+            &trans, &trans, &trans, &trans, &trans, &trans
+
+            // Rows 2–5 transparent
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+        >;
+        label = "btL";
+    };
+
+    bt_right {
+        bindings = <
+            // Row 1 (12 keys): left half transparent; right half mirror bt_left row1
+            &trans, &trans, &trans, &trans, &trans, &trans,
+            &bt BT_DISC 4, &bt BT_DISC 3, &bt BT_DISC 2, &bt BT_DISC 1, &bt BT_DISC 0, &kp CAPS
+
+            // Rows 2–5 transparent
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans,
+              &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+
+            , &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans, &trans
+        >;
+        label = "btR";
+    };
+
+};  // end keymap
+}; 
