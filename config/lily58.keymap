@@ -84,22 +84,22 @@
     combos {
         compatible = "zmk,combos";
 
-        stick-L-ctrl {
+        stickLctrl {
             bindings = <&sk LCTRL>;
             key-positions = <24 28>;
         };
 
-        stick-L-ctrl-alt {
+        stickLctrlAlt {
             bindings = <&sk LA(LCTRL)>;
             key-positions = <24 28 27>;
         };
 
-        L-mo-keeb {
+        L_mo_keeb {
             bindings = <&mo 4>;
             key-positions = <53 24>;
         };
 
-        r-mo-fkeys {
+        r_mo_fkeys {
             bindings = <&mo 2>;
             key-positions = <54 35>;
         };
