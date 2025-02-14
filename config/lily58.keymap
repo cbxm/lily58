@@ -199,10 +199,10 @@
         NavRight {
             label = "navR";
             bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans            &trans     &trans     &trans             &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &kp LG(LC(LEFT))  &trans     &trans     &kp LG(LC(RIGHT))  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT          &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &kp HOME          &kp PG_DN  &kp PG_UP  &kp END            &trans  &mo 10
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans            &trans     &trans     &trans             &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT          &trans  &mo 10
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME          &kp PG_DN  &kp PG_UP  &kp END            &trans  &trans
                         &trans  &trans  &trans  &trans    &trans  &trans            &trans     &trans
             >;
         };
@@ -210,22 +210,22 @@
         boardLeft {
             label = "keebL";
             bindings = <
-&kp CAPS  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &kp KP_NLCK  &none         &none       &none         &none  &bt BT_CLR
-&none     &none          &none          &none          &none          &none                          &none        &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none  &bt BT_PRV
-&none     &none          &none          &none          &none          &none                          &none        &kp C_PREV    &kp C_PP    &kp C_NEXT    &none  &bt BT_NXT
-&none     &none          &none          &none          &none          &none          &none    &none  &none        &none         &none       &none         &none  &none
-                                        &none          &none          &none          &none    &none  &none        &none         &trans
+&kp CAPS  &none  &bt BT_PRV  &bt BT_CLR &bt BT_NXT   &none                    &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4 &kp KP_NLCK
+&none     &none          &none          &none          &none          &none                          &none        &none  &none   &none  &none &none 
+&none     &none          &kp C_VOL_DN   &kp C_MUTE     &kp C_VOL_UP   &none                          &none        &none  &none   &none  &none &none 
+&none     &none          &kp C_PREV     &kp C_PP       &kp C_NEXT     &none          &none    &none  &none        &none  &none   &none  &none &none 
+                                        &none          &none          &none          &none    &none  &none        &none  &trans
             >;
         };
 
         boardRight {
             label = "keebR";
             bindings = <
-&kp CAPS  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                    &kp KP_NLCK  &none         &none       &none         &none  &bt BT_CLR
-&none     &none          &none          &none          &none          &none                            &none        &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none  &bt BT_PRV
-&none     &none          &none          &none          &none          &none                            &none        &kp C_PREV    &kp C_PP    &kp C_NEXT    &none  &bt BT_NXT
-&none     &none          &none          &none          &none          &none          &none     &none   &none        &none         &none       &none         &none  &none
-                                        &trans         &trans         &trans         &trans    &trans  &trans       &trans        &trans
+&kp CAPS  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                  &none  &bt BT_PRV    &bt BT_CLR  &bt BT_NXT    &none   &kp KP_NLCK
+&none     &none          &none          &none          &none          &none                          &none        &none         &none       &none         &none  &none
+&none     &none          &none          &none          &none          &none                          &none        &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP  &none  &none
+&none     &none          &none          &none          &none          &none          &none    &none  &none        &kp C_PREV    &kp C_PP    &kp C_NEXT    &none  &none
+                                        &none          &none          &none          &none    &none  &none        &none         &trans
             >;
         };
 
@@ -246,7 +246,7 @@
 
         keeb {
             if-layers = <5 2>;
-            then-layer = <9>;
+            then-layer = <10>;
         };
     };
 };
