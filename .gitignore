@@ -1,0 +1,44 @@
+# ZMK Build artifacts
+/build/
+/firmware/
+*.uf2
+*.bin
+
+# West workspace dependencies  
+/modules/
+/tools/
+/zephyr/
+/zmk/
+/bootloader/
+
+# West cache and metadata
+.west/
+.cache/
+*.cache
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System files
+*.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
