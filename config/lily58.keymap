@@ -120,11 +120,6 @@
             key-positions = <24 28 27>;
         };
 
-        L_mo_keeb {
-            bindings = <&mo 4>;
-            key-positions = <53 24>;
-        };
-
         r_mo_fkeys {
             bindings = <&mo 2>;
             key-positions = <54 35>;
@@ -140,7 +135,7 @@
 &kp ESC  &kp N1        &kp N2      &kp N3      &kp N4       &kp N5                                       &kp N6     &kp N7       &kp N8      &kp N9      &kp N0           &none
 &none    &kp Q         &kp W       &kp E       &kp R        &kp T                                        &kp Y      &kp U        &kp I       &kp O       &kp P            &none
 &none    &hm_shift LSHIFT A  &hm_slow LGUI S  &hm_slow LALT D  &hm_fast LCTRL F  &kp G                                        &kp H      &hm_slow LCTRL J  &hm_slow LALT K  &hm_gui RGUI L  &hm_slow RSHIFT SEMI  &kp APOSTROPHE
-&none    &kp Z         &kp X       &kp C       &kp V        &kp B        &none              &none        &kp N      &kp M        &kp COMMA   &kp DOT     &kp FSLH         &none
+&mo 9    &kp Z         &kp X       &kp C       &kp V        &kp B        &none              &none        &kp N      &kp M        &kp COMMA   &kp DOT     &kp FSLH         &mo 10
                                    &none       &lt 1 TAB    &lt 5 ENTER  &lt 7 BACKSPACE    &lt 8 SPACE  &lt 2 TAB  &lt 6 DEL    &none
             >;
         };
@@ -216,7 +211,7 @@
             bindings = <
 &trans  &trans  &trans            &trans        &trans          &trans                               &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp LG(LC(LEFT))  &trans        &trans          &kp LG(LC(RIGHT))                    &trans  &trans  &trans  &trans  &trans  &trans
-&mo 9   &trans  &kp LEFT          &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT                            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp LEFT          &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT                            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &kp HOME          &kp PG_UP     &kp PG_DN       &kp END            &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
                                   &trans        &trans          &trans             &trans    &trans  &trans  &trans  &trans
             >;
@@ -227,7 +222,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans            &trans     &trans     &trans             &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                    &kp LG(LC(LEFT))  &trans     &trans     &kp LG(LC(RIGHT))  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT          &trans  &mo 10
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp LEFT          &kp DOWN   &kp UP     &kp RIGHT          &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME          &kp PG_DN  &kp PG_UP  &kp END            &trans  &trans
                         &trans  &trans  &trans  &trans    &trans  &trans            &trans     &trans
             >;
